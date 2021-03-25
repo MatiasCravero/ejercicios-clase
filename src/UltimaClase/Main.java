@@ -11,7 +11,7 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        Integer[] enteros = new Integer[100];
+        Integer[] enteros = new Integer[1000000];
         for (int i = 0; i < enteros.length; i++){
             enteros[i] = ThreadLocalRandom.current().nextInt(1, 80);
             System.out.println(enteros[i]);
@@ -41,10 +41,18 @@ public class Main {
         try {
             MyFactory factory = new MyFactory();
             Sorter instancia = (Sorter)factory.getInstance("sorter");
+            Time classTime = new Time();
+            classTime.start();
             instancia.sort(enteros, comparadores);
+            classTime.end();
+            long time = classTime.totalTime();
             for (int i = 0; i < enteros.length; i++){
                 System.out.println(enteros[i]);
             }
+            System.out.println("Tiempo total: " + time);
+            //Bubble = mucho
+            //Quick = 124
+            //Heap = 220
         }catch (Exception e){
 
         }
