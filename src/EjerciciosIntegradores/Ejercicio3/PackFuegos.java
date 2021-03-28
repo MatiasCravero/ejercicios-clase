@@ -18,6 +18,22 @@ public class PackFuegos extends FuegoArtificial{
         }
     }
 
-    private ArrayList<FuegoIndividual> fuegos;
+    public ArrayList<FuegoArtificial> getFuegos() {
+        return fuegos;
+    }
+
+    public void setFuegos(ArrayList<FuegoArtificial> fuegos) {
+        this.fuegos = fuegos;
+    }
+
+    public ArrayList<PackFuegos> getPacks() {
+        return packs;
+    }
+
+    public void setPacks(ArrayList<PackFuegos> packs) {
+        this.packs = packs;
+    }
+
+    private ArrayList<FuegoArtificial> fuegos;
     private ArrayList<PackFuegos> packs;
 }
